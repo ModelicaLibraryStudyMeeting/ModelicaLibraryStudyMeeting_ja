@@ -1,0 +1,43 @@
+
+>> setCommandLineOptions("-g=Optimica")
+true
+
+>> cd("C:\Work\CAE\Modelica\OpenModelica\Optimization\Examples\Examples2\exe")
+"C:/Work/CAE/Modelica/OpenModelica/Optimization/Examples/Examples2/exe"
+
+>> loadFile("test.mo")
+true
+
+>> loadFile("optim.mo")
+true
+
+>> optimize(optim, numberOfIntervals=16, stopTime=1, tolerance=1e-8)
+record SimulationResult
+    resultFile = "C:/Work/CAE/Modelica/OpenModelica/Optimization/Examples/Examples2/exe/optim_res.mat",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 16, tolerance = 1e-008, method = 'optimization', fileNamePrefix = 'optim', options = '', outputFormat = 'mat', variableFilter = '.*', cflags = '', simflags = ''",
+    messages = "LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+
+Optimizer Variables
+========================================================
+Input[0]:x(start = 0, nominal = 1, min = -1, max = 1)
+--------------------------------------------------------
+number of nonlinear constraints: 0
+========================================================
+stdout            | info    | Jacobian or SparsePattern is not generated or failed to initialize! Switch back to normal.
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit http://projects.coin-or.org/Ipopt
+******************************************************************************
+
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.06407321736523823,
+    timeBackend = 0.004808563663143814,
+    timeSimCode = 0.000966380532938807,
+    timeTemplates = 0.01013933748597381,
+    timeCompile = 20.20546708817876,
+    timeSimulation = 3.218398353725178,
+    timeTotal = 23.50436056423495
+end SimulationResult;

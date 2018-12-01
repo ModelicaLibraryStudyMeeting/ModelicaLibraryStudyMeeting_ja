@@ -1,0 +1,59 @@
+OMShell 1.1 Copyright Open Source Modelica Consortium (OSMC) 2002-2018
+Distributed under OMSC-PL and GPL, see www.openmodelica.org
+
+Connected to v1.13.0-dev-862-gceb595ee2 (64-bit)
+To get help on using OMShell and OpenModelica, type "help()" and press enter.
+
+>> setCommandLineOptions("-g=Optimica");
+
+>> cd("C:\Work\CAE\Modelica\OpenModelica\Optimization\Examples\Examples1\exe")
+"C:/Work/CAE/Modelica/OpenModelica/Optimization/Examples/Examples1/exe"
+
+>> loadFile("BatchReactor.mo")
+true
+
+>> loadFile("nmpcBatchReactor.mo")
+true
+
+>> optimize(nmpcBatchReactor, numberOfIntervals=16, stopTime=1, tolerance=1e-8)
+record SimulationResult
+    resultFile = "C:/Work/CAE/Modelica/OpenModelica/Optimization/Examples/Examples1/exe/nmpcBatchReactor_res.mat",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 16, tolerance = 1e-008, method = 'optimization', fileNamePrefix = 'nmpcBatchReactor', options = '', outputFormat = 'mat', variableFilter = '.*', cflags = '', simflags = ''",
+    messages = "LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+
+Optimizer Variables
+========================================================
+State[0]:x1(start = 1, nominal = 1, min = 0, max = 1, init = 1)
+State[1]:x2(start = 0, nominal = 1, min = 0, max = 1, init = 0)
+Input[2]:u(start = 0, nominal = 5, min = 0, max = 5)
+--------------------------------------------------------
+number of nonlinear constraints: 0
+========================================================
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit http://projects.coin-or.org/Ipopt
+******************************************************************************
+
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.09212013313441697,
+    timeBackend = 0.06837926315125387,
+    timeSimCode = 0.0a1334480348013687,
+    timeTemplates = 0.01369233580009562,
+    timeCompile = 20.15212434144813,
+    timeSimulation = 2.956783827238876,
+    timeTotal = 23.29995977668952
+end SimulationResult;
+
+>> plot(u)
+true
+
+>> plot(x1)
+true
+
+>> plot(x2)
+true
+
+>> 
