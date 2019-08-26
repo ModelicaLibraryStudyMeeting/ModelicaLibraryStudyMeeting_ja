@@ -10,7 +10,7 @@
 http://virtuallabmodelica.blog.jp/archives/19493577.html
 
 ## BuildingsライブラリのFMI用コンポーネントを少しさわってみる(kinonotofu)  
-http://virtuallabmodelica.blog.jp/archives/17388146.html
+20190824_Buildings-FMI.pdf
 
 ## Modelica.Fluidのバルブモデルについて(finback)
 
